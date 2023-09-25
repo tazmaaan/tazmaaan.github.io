@@ -7,10 +7,6 @@ body {
     padding: 0;
 }
 
-.hidden {
-    display: none;
-}
-
 #welcome {
     position: absolute;
     top: 50%;
