@@ -29,30 +29,30 @@ function startGame() {
 
     function handlePlayer1Input(event) {
         if (event.key === "Enter") {
-            const inputText = event.target.value;
+            const inputText = player1Input.value;
             const displayedSentence = sentenceDisplay.textContent;
             if (inputText === displayedSentence) {
                 player1Score++;
             }
-            event.target.value = "";
+            player1Input.value = "";
             updateSentence();
         }
     }
 
     function handlePlayer2Input(event) {
         if (event.key === "Enter") {
-            const inputText = event.target.value;
+            const inputText = player2Input.value;
             const displayedSentence = sentenceDisplay.textContent;
             if (inputText === displayedSentence) {
                 player2Score++;
             }
-            event.target.value = "";
+            player2Input.value = "";
             updateSentence();
         }
     }
 
-    player1Input.addEventListener("keydown", handlePlayer1Input);
-    player2Input.addEventListener("keydown", handlePlayer2Input);
+    player1Input.addEventListener("keyup", handlePlayer1Input);
+    player2Input.addEventListener("keyup", handlePlayer2Input);
 
     updateSentence();
 }
