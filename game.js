@@ -13,9 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function startGame(playerName) {
-        // כאן תוכל להוסיף את הלוגיקה הראשונית של המשחק
-        // כמו יצירת המשפטים והמשך המשחק
         console.log(`שחקן ${playerName} התחיל את המשחק`);
-        welcomeScreen.style.display = "none"; // הסתרת מסך הברוכים הבאים
+        welcomeScreen.style.display = "none";
     }
 });
