@@ -1,0 +1,69 @@
+/* עיצוב כללי */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #007acc;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* עיצוב עמוד הבית */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* עיצוב עמוד עלינו */
+main h2 {
+    font-size: 24px;
+}
+
+main p {
+    font-size: 16px;
+}
+
+/* עיצוב כללי לכותרות */
+h1, h2, h3 {
+    color: #007acc;
+}
+
+/* עיצוב תחתית העמוד */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* עיצוב לקישורים */
+a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
