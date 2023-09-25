@@ -15,7 +15,6 @@ function getRandomSentence() {
 }
 
 function startGame() {
-    let currentPlayer = 1;
     let player1Score = 0;
     let player2Score = 0;
 
@@ -28,31 +27,32 @@ function startGame() {
         sentenceDisplay.textContent = sentence;
     }
 
-    function handleInput(event) {
+    function handlePlayer1Input(event) {
         if (event.key === "Enter") {
             const inputText = event.target.value;
             const displayedSentence = sentenceDisplay.textContent;
-            
-            if (currentPlayer === 1) {
-                if (inputText === displayedSentence) {
-                    player1Score++;
-                }
-                player1Input.value = "";
-                currentPlayer = 2;
-            } else {
-                if (inputText === displayedSentence) {
-                    player2Score++;
-                }
-                player2Input.value = "";
-                currentPlayer = 1;
+            if (inputText === displayedSentence) {
+                player1Score++;
             }
-            
+            event.target.value = "";
             updateSentence();
         }
     }
 
-    player1Input.addEventListener("keyup", handleInput);
-    player2Input.addEventListener("keyup", handleInput);
+    function handlePlayer2Input(event) {
+        if (event.key === "Enter") {
+            const inputText = event.target.value;
+            const displayedSentence = sentenceDisplay.textContent;
+            if (inputText === displayedSentence) {
+                player2Score++;
+            }
+            event.target.value = "";
+            updateSentence();
+        }
+    }
+
+    player1Input.addEventListener("keydown", handlePlayer1Input);
+    player2Input.addEventListener("keydown", handlePlayer2Input);
 
     updateSentence();
 }
