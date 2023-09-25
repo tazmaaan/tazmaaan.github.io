@@ -17,42 +17,38 @@ function getRandomSentence() {
 function startGame() {
     let player1Score = 0;
     let player2Score = 0;
+    let currentPlayer = 1;
+    let currentSentence = getRandomSentence();
 
     const player1Input = document.getElementById("player1-input");
     const player2Input = document.getElementById("player2-input");
     const sentenceDisplay = document.getElementById("sentence-display");
 
     function updateSentence() {
-        const sentence = getRandomSentence();
-        sentenceDisplay.textContent = sentence;
+        currentSentence = getRandomSentence();
+        sentenceDisplay.textContent = currentSentence;
     }
 
-    function handlePlayer1Input(event) {
+    function handleInput(event) {
         if (event.key === "Enter") {
             const inputText = event.target.value;
-            const displayedSentence = sentenceDisplay.textContent;
-            if (inputText === displayedSentence) {
-                player1Score++;
+            
+            if (inputText === currentSentence) {
+                if (currentPlayer === 1) {
+                    player1Score++;
+                } else {
+                    player2Score++;
+                }
             }
+            
             event.target.value = "";
+            currentPlayer = currentPlayer === 1 ? 2 : 1;
             updateSentence();
         }
     }
 
-    function handlePlayer2Input(event) {
-        if (event.key === "Enter") {
-            const inputText = event.target.value;
-            const displayedSentence = sentenceDisplay.textContent;
-            if (inputText === displayedSentence) {
-                player2Score++;
-            }
-            event.target.value = "";
-            updateSentence();
-        }
-    }
-
-    player1Input.addEventListener("keydown", handlePlayer1Input);
-    player2Input.addEventListener("keydown", handlePlayer2Input);
+    player1Input.addEventListener("keydown", handleInput);
+    player2Input.addEventListener("keydown", handleInput);
 
     updateSentence();
 }
